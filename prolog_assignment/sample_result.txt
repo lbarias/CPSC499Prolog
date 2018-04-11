@@ -1,0 +1,1417 @@
+CPSC 449 W15 Prolog test program, version 4.
+prolog source file to test: ---------------------------------------------------------------
+Running test 'hasChild(fred, jed). true'...
+  Executing: /usr/bin/gprolog --c solution.pl --c ./families.pl
+  GNU Prolog 1.4.4 (64 bits)
+  Compiled Aug 16 2014, 23:07:54 with gcc
+  By Daniel Diaz
+  Copyright (C) 1999-2013 Daniel Diaz
+  compiling /home/grads/aafshar/prolog_proj/solution.pl for byte code...
+  /home/grads/aafshar/prolog_proj/solution.pl:54: warning: singleton variables [Seen] for getSpecies1/3
+  /home/grads/aafshar/prolog_proj/solution.pl compiled, 61 lines read - 18178 bytes written, 14 ms
+  compiling /home/grads/aafshar/prolog_proj/families.pl for byte code...
+  /home/grads/aafshar/prolog_proj/families.pl compiled, 76 lines read - 6257 bytes written, 11 ms
+  | ?- 
+  true ?
+  a
+  
+  no
+  | ?- 
+  Test 'hasChild(fred, jed). true': Success
+---------------------------------------------------------------
+Running test 'parentOf(freida,jason). true'...
+  yes
+  | ?-
+  Test 'parentOf(freida,jason). true': Success
+---------------------------------------------------------------
+Running test 'parentOf(jason,freida). false'...
+  no
+  | ?-
+  Test 'parentOf(jason,freida). false': Success
+---------------------------------------------------------------
+Running test 'parentOf(freida,X).'...
+  setof(X,parentOf(freida,X),L).
+  L = [jason]
+  
+  yes
+  | ?-
+  Test 'parentOf(freida,X).': Success
+---------------------------------------------------------------
+Running test 'parentOf(mary,X).'...
+  setof(X,parentOf(mary,X),L).
+  L = [jane,jed,sally]
+  
+  (1 ms) yes
+  | ?-
+  Test 'parentOf(mary,X).': Success
+---------------------------------------------------------------
+Running test 'parentOf(X,terry).'...
+  setof(X,parentOf(X,terry),L).
+  L = [harry,jan]
+  
+  yes
+  | ?-
+  Test 'parentOf(X,terry).': Success
+---------------------------------------------------------------
+Running test 'parentOf(X,terry). strict'...
+  bagof(X,parentOf(X,terry),L).
+  L = [jan,harry]
+  
+  yes
+  | ?-
+  Test 'parentOf(X,terry). strict': Success
+---------------------------------------------------------------
+Running test 'motherOf(jane,mavis). false'...
+  no
+  | ?-
+  Test 'motherOf(jane,mavis). false': Success
+---------------------------------------------------------------
+Running test 'motherOf(jane,jack). true'...
+  yes
+  | ?-
+  Test 'motherOf(jane,jack). true': Success
+---------------------------------------------------------------
+Running test 'motherOf(jane,X).'...
+  setof(X,motherOf(jane,X),L).
+  L = [george,jack]
+  
+  yes
+  | ?-
+  Test 'motherOf(jane,X).': Success
+---------------------------------------------------------------
+Running test 'motherOf(X,terry).'...
+  setof(X,motherOf(X,terry),L).
+  L = [jan]
+  
+  yes
+  | ?-
+  Test 'motherOf(X,terry).': Success
+---------------------------------------------------------------
+Running test 'fatherOf(joe,jed). false'...
+  no
+  | ?-
+  Test 'fatherOf(joe,jed). false': Success
+---------------------------------------------------------------
+Running test 'fatherOf(joe,jane). true'...
+  yes
+  | ?-
+  Test 'fatherOf(joe,jane). true': Success
+---------------------------------------------------------------
+Running test 'fatherOf(sam,X).'...
+  setof(X,fatherOf(sam,X),L).
+  L = [george,jack]
+  
+  yes
+  | ?-
+  Test 'fatherOf(sam,X).': Success
+---------------------------------------------------------------
+Running test 'fatherOf(X,jack).'...
+  setof(X,fatherOf(X,jack),L).
+  L = [sam]
+  
+  yes
+  | ?-
+  Test 'fatherOf(X,jack).': Success
+---------------------------------------------------------------
+Running test 'grandparentOf(harry,jill). true'...
+  yes
+  | ?-
+  Test 'grandparentOf(harry,jill). true': Success
+---------------------------------------------------------------
+Running test 'grandparentOf(harry,terry). false'...
+  no
+  | ?-
+  Test 'grandparentOf(harry,terry). false': Success
+---------------------------------------------------------------
+Running test 'grandparentOf(harry,jed). false'...
+  no
+  | ?-
+  Test 'grandparentOf(harry,jed). false': Success
+---------------------------------------------------------------
+Running test 'grandparentOf(harry,X).'...
+  setof(X,grandparentOf(harry,X),L).
+  L = [jill]
+  
+  yes
+  | ?-
+  Test 'grandparentOf(harry,X).': Success
+---------------------------------------------------------------
+Running test 'grandparentOf(mary,X).'...
+  setof(X,grandparentOf(mary,X),L).
+  L = [george,jack]
+  
+  yes
+  | ?-
+  Test 'grandparentOf(mary,X).': Success
+---------------------------------------------------------------
+Running test 'grandparentOf(X,mavis).'...
+  setof(X,grandparentOf(X,mavis),L).
+  L = [jane,jason,sam,terry]
+  
+  yes
+  | ?-
+  Test 'grandparentOf(X,mavis).': Success
+---------------------------------------------------------------
+Running test 'grandparentOf(X,mavis). strict'...
+  bagof(X,grandparentOf(X,mavis),L).
+  L = [jane,sam,jason,terry]
+  
+  yes
+  | ?-
+  Test 'grandparentOf(X,mavis). strict': Success
+---------------------------------------------------------------
+Running test 'grandmotherOf(jane,mavis). true'...
+  true ?
+  a
+  
+  no
+  | ?- 
+  Test 'grandmotherOf(jane,mavis). true': Success
+---------------------------------------------------------------
+Running test 'grandmotherOf(jane,jack). false'...
+  no
+  | ?-
+  Test 'grandmotherOf(jane,jack). false': Success
+---------------------------------------------------------------
+Running test 'grandmotherOf(jane,X).'...
+  setof(X,grandmotherOf(jane,X),L).
+  L = [mavis]
+  
+  yes
+  | ?-
+  Test 'grandmotherOf(jane,X).': Success
+---------------------------------------------------------------
+Running test 'grandmotherOf(X,jill).'...
+  setof(X,grandmotherOf(X,jill),L).
+  L = [freida,jan]
+  
+  (1 ms) yes
+  | ?-
+  Test 'grandmotherOf(X,jill).': Success
+---------------------------------------------------------------
+Running test 'grandfatherOf(joe,jane). false'...
+  no
+  | ?-
+  Test 'grandfatherOf(joe,jane). false': Success
+---------------------------------------------------------------
+Running test 'grandfatherOf(joe,george). true'...
+  true ?
+  a
+  
+  no
+  | ?- 
+  Test 'grandfatherOf(joe,george). true': Success
+---------------------------------------------------------------
+Running test 'grandfatherOf(joe,X).'...
+  setof(X,grandfatherOf(joe,X),L).
+  L = [george,jack]
+  
+  yes
+  | ?-
+  Test 'grandfatherOf(joe,X).': Success
+---------------------------------------------------------------
+Running test 'grandfatherOf(X,jill).'...
+  setof(X,grandfatherOf(X,jill),L).
+  L = [harry,tim]
+  
+  yes
+  | ?-
+  Test 'grandfatherOf(X,jill).': Success
+---------------------------------------------------------------
+Running test 'greatgrandparentOf(tim,mavis). true'...
+  yes
+  | ?-
+  Test 'greatgrandparentOf(tim,mavis). true': Success
+---------------------------------------------------------------
+Running test 'greatgrandparentOf(tim,jill). false'...
+  no
+  | ?-
+  Test 'greatgrandparentOf(tim,jill). false': Success
+---------------------------------------------------------------
+Running test 'greatgrandparentOf(tim,X).'...
+  setof(X,greatgrandparentOf(tim,X),L).
+  L = [mavis]
+  
+  yes
+  | ?-
+  Test 'greatgrandparentOf(tim,X).': Success
+---------------------------------------------------------------
+Running test 'greatgrandparentOf(mary,X).'...
+  setof(X,greatgrandparentOf(mary,X),L).
+  L = [mavis]
+  
+  yes
+  | ?-
+  Test 'greatgrandparentOf(mary,X).': Success
+---------------------------------------------------------------
+Running test 'greatgrandparentOf(X,mavis).'...
+  setof(X,greatgrandparentOf(X,mavis),L).
+  L = [freida,harry,jan,joe,mary,tim]
+  
+  (1 ms) yes
+  | ?-
+  Test 'greatgrandparentOf(X,mavis).': Success
+---------------------------------------------------------------
+Running test 'greatgrandparentOf(X,mavis). strict'...
+  bagof(X,greatgrandparentOf(X,mavis),L).
+  L = [joe,mary,tim,freida,jan,harry]
+  
+  yes
+  | ?-
+  Test 'greatgrandparentOf(X,mavis). strict': Success
+---------------------------------------------------------------
+Running test 'greatgrandmotherOf(freida,mavis). true'...
+  yes
+  | ?-
+  Test 'greatgrandmotherOf(freida,mavis). true': Success
+---------------------------------------------------------------
+Running test 'greatgrandmotherOf(jane,mavis). false'...
+  no
+  | ?-
+  Test 'greatgrandmotherOf(jane,mavis). false': Success
+---------------------------------------------------------------
+Running test 'greatgrandmotherOf(jan,X).'...
+  setof(X,greatgrandmotherOf(jan,X),L).
+  L = [mavis]
+  
+  yes
+  | ?-
+  Test 'greatgrandmotherOf(jan,X).': Success
+---------------------------------------------------------------
+Running test 'greatgrandmotherOf(jane,X). false'...
+  no
+  | ?-
+  Test 'greatgrandmotherOf(jane,X). false': Success
+---------------------------------------------------------------
+Running test 'greatgrandmotherOf(X,mavis).'...
+  setof(X,greatgrandmotherOf(X,mavis),L).
+  L = [freida,jan,mary]
+  
+  yes
+  | ?-
+  Test 'greatgrandmotherOf(X,mavis).': Success
+---------------------------------------------------------------
+Running test 'greatgrandfatherOf(mary,mavis). false'...
+  no
+  | ?-
+  Test 'greatgrandfatherOf(mary,mavis). false': Success
+---------------------------------------------------------------
+Running test 'greatgrandfatherOf(joe,mavis). true'...
+  true ?
+  a
+  
+  no
+  | ?- 
+  Test 'greatgrandfatherOf(joe,mavis). true': Success
+---------------------------------------------------------------
+Running test 'greatgrandfatherOf(joe,X).'...
+  setof(X,greatgrandfatherOf(joe,X),L).
+  L = [mavis]
+  
+  yes
+  | ?-
+  Test 'greatgrandfatherOf(joe,X).': Success
+---------------------------------------------------------------
+Running test 'greatgrandfatherOf(X,mavis).'...
+  setof(X,greatgrandfatherOf(X,mavis),L).
+  L = [harry,joe,tim]
+  
+  yes
+  | ?-
+  Test 'greatgrandfatherOf(X,mavis).': Success
+---------------------------------------------------------------
+Running test 'parent(terry). true'...
+  yes
+  | ?-
+  Test 'parent(terry). true': Success
+---------------------------------------------------------------
+Running test 'parent(jack). false'...
+  no
+  | ?-
+  Test 'parent(jack). false': Success
+---------------------------------------------------------------
+Running test 'parent(X).'...
+  setof(X,parent(X),L).
+  L = [fred,freida,george,harry,jan,jane,jason,jill,joe,lady,lassie,mary,rover,sam,terry,tim,tramp]
+  
+  (1 ms) yes
+  | ?-
+  Test 'parent(X).': Success
+---------------------------------------------------------------
+Running test 'parent(X). strict'...
+  bagof(X,parent(X),L).
+  L = [fred,freida,george,harry,jan,jane,jason,jill,joe,lady,lassie,mary,rover,sam,terry,tim,tramp]
+  
+  yes
+  | ?-
+  Test 'parent(X). strict': Success
+---------------------------------------------------------------
+Running test 'childless(jed). true'...
+  true ?
+  a
+  
+  no
+  | ?- 
+  Test 'childless(jed). true': Success
+---------------------------------------------------------------
+Running test 'childless(george). false'...
+  no
+  | ?-
+  Test 'childless(george). false': Success
+---------------------------------------------------------------
+Running test 'childless(X).'...
+  setof(X,childless(X),L).
+  L = [felix,jack,jed,mavis,sally,snoopy]
+  
+  yes
+  | ?-
+  Test 'childless(X).': Success
+---------------------------------------------------------------
+Running test 'childless(X). strict'...
+  bagof(X,childless(X),L).
+  L = [jed,jack,felix,snoopy,sally,mavis]
+  
+  yes
+  | ?-
+  Test 'childless(X). strict': Success
+---------------------------------------------------------------
+Running test 'sibling(jed,terry). different families'...
+  no
+  | ?-
+  Test 'sibling(jed,terry). different families': Success
+---------------------------------------------------------------
+Running test 'sibling(jed,jane). step siblings'...
+  (1 ms) no
+  | ?-
+  Test 'sibling(jed,jane). step siblings': Success
+---------------------------------------------------------------
+Running test 'sibling(jed,sally). true'...
+  yes
+  | ?-
+  Test 'sibling(jed,sally). true': Success
+---------------------------------------------------------------
+Running test 'sibling(jed,X).'...
+  setof(X,sibling(jed,X),L).
+  L = [sally]
+  
+  yes
+  | ?-
+  Test 'sibling(jed,X).': Success
+---------------------------------------------------------------
+Running test 'sibling(jed,X). strict'...
+  bagof(X,sibling(jed,X),L).
+  L = [sally]
+  
+  (1 ms) yes
+  | ?-
+  Test 'sibling(jed,X). strict': Success
+---------------------------------------------------------------
+Running test 'sibling(X,george).'...
+  setof(X,sibling(X,george),L).
+  L = [jack]
+  
+  yes
+  | ?-
+  Test 'sibling(X,george).': Success
+---------------------------------------------------------------
+Running test 'sibling(X,george). strict'...
+  bagof(X,sibling(X,george),L).
+  L = [jack]
+  
+  (1 ms) yes
+  | ?-
+  Test 'sibling(X,george). strict': Success
+---------------------------------------------------------------
+Running test 'sibling(X,Y).'...
+  setof([X,Y],sibling(X,Y),L).
+  L = [[george,jack],[jack,george],[jed,sally],[sally,jed]]
+  
+  yes
+  | ?-
+  Test 'sibling(X,Y).': Success
+---------------------------------------------------------------
+Running test 'sibling(X,Y). strict'...
+  bagof([X,Y],sibling(X,Y),L).
+  L = [[george,jack],[jack,george],[jed,sally],[sally,jed]]
+  
+  yes
+  | ?-
+  Test 'sibling(X,Y). strict': Success
+---------------------------------------------------------------
+Running test 'sisterOf(sally,jane). step sister'...
+  (1 ms) no
+  | ?-
+  Test 'sisterOf(sally,jane). step sister': Success
+---------------------------------------------------------------
+Running test 'sisterOf(jed,sally). wrong way'...
+  no
+  | ?-
+  Test 'sisterOf(jed,sally). wrong way': Success
+---------------------------------------------------------------
+Running test 'sisterOf(sally,jed). true'...
+  yes
+  | ?-
+  Test 'sisterOf(sally,jed). true': Success
+---------------------------------------------------------------
+Running test 'sisterOf(sally,X).'...
+  setof(X,sisterOf(sally,X),L).
+  L = [jed]
+  
+  yes
+  | ?-
+  Test 'sisterOf(sally,X).': Success
+---------------------------------------------------------------
+Running test 'sisterOf(sally,X). strict'...
+  bagof(X,sisterOf(sally,X),L).
+  L = [jed]
+  
+  (1 ms) yes
+  | ?-
+  Test 'sisterOf(sally,X). strict': Success
+---------------------------------------------------------------
+Running test 'sisterOf(X,jed).'...
+  setof(X,sisterOf(X,jed),L).
+  L = [sally]
+  
+  (3 ms) yes
+  | ?-
+  Test 'sisterOf(X,jed).': Success
+---------------------------------------------------------------
+Running test 'sisterOf(X,jed). strict'...
+  bagof(X,sisterOf(X,jed),L).
+  L = [sally]
+  
+  (4 ms) yes
+  | ?-
+  Test 'sisterOf(X,jed). strict': Success
+---------------------------------------------------------------
+Running test 'sisterOf(X,Y).'...
+  setof([X,Y],sisterOf(X,Y),L).
+  L = [[sally,jed]]
+  
+  (3 ms) yes
+  | ?-
+  Test 'sisterOf(X,Y).': Success
+---------------------------------------------------------------
+Running test 'sisterOf(X,Y). strict'...
+  bagof([X,Y],sisterOf(X,Y),L).
+  L = [[sally,jed]]
+  
+  (4 ms) yes
+  | ?-
+  Test 'sisterOf(X,Y). strict': Success
+---------------------------------------------------------------
+Running test 'brotherOf(jed,jane). step brother'...
+  no
+  | ?-
+  Test 'brotherOf(jed,jane). step brother': Success
+---------------------------------------------------------------
+Running test 'brotherOf(sally,jed). wrong way'...
+  no
+  | ?-
+  Test 'brotherOf(sally,jed). wrong way': Success
+---------------------------------------------------------------
+Running test 'brotherOf(jed,sally). true'...
+  yes
+  | ?-
+  Test 'brotherOf(jed,sally). true': Success
+---------------------------------------------------------------
+Running test 'brotherOf(jed,X).'...
+  setof(X,brotherOf(jed,X),L).
+  L = [sally]
+  
+  yes
+  | ?-
+  Test 'brotherOf(jed,X).': Success
+---------------------------------------------------------------
+Running test 'brotherOf(jed,X). strict'...
+  bagof(X,brotherOf(jed,X),L).
+  L = [sally]
+  
+  (1 ms) yes
+  | ?-
+  Test 'brotherOf(jed,X). strict': Success
+---------------------------------------------------------------
+Running test 'brotherOf(X,sally).'...
+  setof(X,brotherOf(X,sally),L).
+  L = [jed]
+  
+  (5 ms) yes
+  | ?-
+  Test 'brotherOf(X,sally).': Success
+---------------------------------------------------------------
+Running test 'brotherOf(X,sally). strict'...
+  bagof(X,brotherOf(X,sally),L).
+  L = [jed]
+  
+  (4 ms) yes
+  | ?-
+  Test 'brotherOf(X,sally). strict': Success
+---------------------------------------------------------------
+Running test 'brotherOf(X,Y).'...
+  setof([X,Y],brotherOf(X,Y),L).
+  L = [[george,jack],[jack,george],[jed,sally]]
+  
+  (5 ms) yes
+  | ?-
+  Test 'brotherOf(X,Y).': Success
+---------------------------------------------------------------
+Running test 'brotherOf(X,Y). strict'...
+  bagof([X,Y],brotherOf(X,Y),L).
+  L = [[jed,sally],[george,jack],[jack,george]]
+  
+  (5 ms) yes
+  | ?-
+  Test 'brotherOf(X,Y). strict': Success
+---------------------------------------------------------------
+Running test 'stepSibling(jed,terry). different families'...
+  no
+  | ?-
+  Test 'stepSibling(jed,terry). different families': Success
+---------------------------------------------------------------
+Running test 'stepSibling(jed,sally). siblings'...
+  no
+  | ?-
+  Test 'stepSibling(jed,sally). siblings': Success
+---------------------------------------------------------------
+Running test 'stepSibling(jed,jane). true'...
+  true ?
+  a
+  
+  no
+  | ?- 
+  Test 'stepSibling(jed,jane). true': Success
+---------------------------------------------------------------
+Running test 'stepSibling(jed,X).'...
+  setof(X,stepSibling(jed,X),L).
+  L = [jane]
+  
+  yes
+  | ?-
+  Test 'stepSibling(jed,X).': Success
+---------------------------------------------------------------
+Running test 'stepSibling(jed,X). strict'...
+  bagof(X,stepSibling(jed,X),L).
+  L = [jane]
+  
+  yes
+  | ?-
+  Test 'stepSibling(jed,X). strict': Success
+---------------------------------------------------------------
+Running test 'stepSibling(X,jed).'...
+  setof(X,stepSibling(X,jed),L).
+  L = [jane]
+  
+  yes
+  | ?-
+  Test 'stepSibling(X,jed).': Success
+---------------------------------------------------------------
+Running test 'stepSibling(X,jed). strict'...
+  bagof(X,stepSibling(X,jed),L).
+  L = [jane]
+  
+  yes
+  | ?-
+  Test 'stepSibling(X,jed). strict': Success
+---------------------------------------------------------------
+Running test 'stepSibling(X,Y).'...
+  setof([X,Y],stepSibling(X,Y),L).
+  L = [[jane,jed],[jane,sally],[jed,jane],[sally,jane]]
+  
+  yes
+  | ?-
+  Test 'stepSibling(X,Y).': Success
+---------------------------------------------------------------
+Running test 'stepSibling(X,Y). strict'...
+  bagof([X,Y],stepSibling(X,Y),L).
+  L = [[jed,jane],[sally,jane],[jane,jed],[jane,sally]]
+  
+  (1 ms) yes
+  | ?-
+  Test 'stepSibling(X,Y). strict': Success
+---------------------------------------------------------------
+Running test 'stepSisterOf(jane,terry). different families'...
+  no
+  | ?-
+  Test 'stepSisterOf(jane,terry). different families': Success
+---------------------------------------------------------------
+Running test 'stepSisterOf(jed,jane). male'...
+  no
+  | ?-
+  Test 'stepSisterOf(jed,jane). male': Success
+---------------------------------------------------------------
+Running test 'stepSisterOf(jane,sally). true'...
+  true ?
+  a
+  
+  no
+  | ?- 
+  Test 'stepSisterOf(jane,sally). true': Success
+---------------------------------------------------------------
+Running test 'stepSisterOf(jane,X).'...
+  setof(X,stepSisterOf(jane,X),L).
+  L = [jed,sally]
+  
+  yes
+  | ?-
+  Test 'stepSisterOf(jane,X).': Success
+---------------------------------------------------------------
+Running test 'stepSisterOf(jane,X). strict'...
+  bagof(X,stepSisterOf(jane,X),L).
+  L = [jed,sally]
+  
+  yes
+  | ?-
+  Test 'stepSisterOf(jane,X). strict': Success
+---------------------------------------------------------------
+Running test 'stepSisterOf(X,jed).'...
+  setof(X,stepSisterOf(X,jed),L).
+  L = [jane]
+  
+  yes
+  | ?-
+  Test 'stepSisterOf(X,jed).': Success
+---------------------------------------------------------------
+Running test 'stepSisterOf(X,jed). strict'...
+  bagof(X,stepSisterOf(X,jed),L).
+  L = [jane]
+  
+  yes
+  | ?-
+  Test 'stepSisterOf(X,jed). strict': Success
+---------------------------------------------------------------
+Running test 'stepSisterOf(X,Y).'...
+  setof([X,Y],stepSisterOf(X,Y),L).
+  L = [[jane,jed],[jane,sally],[sally,jane]]
+  
+  yes
+  | ?-
+  Test 'stepSisterOf(X,Y).': Success
+---------------------------------------------------------------
+Running test 'stepSisterOf(X,Y). strict'...
+  bagof([X,Y],stepSisterOf(X,Y),L).
+  L = [[sally,jane],[jane,jed],[jane,sally]]
+  
+  (1 ms) yes
+  | ?-
+  Test 'stepSisterOf(X,Y). strict': Success
+---------------------------------------------------------------
+Running test 'stepBrotherOf(jed,terry). different families'...
+  no
+  | ?-
+  Test 'stepBrotherOf(jed,terry). different families': Success
+---------------------------------------------------------------
+Running test 'stepBrotherOf(jane,jed). female'...
+  no
+  | ?-
+  Test 'stepBrotherOf(jane,jed). female': Success
+---------------------------------------------------------------
+Running test 'stepBrotherOf(jed,jane). true'...
+  true ?
+  a
+  
+  no
+  | ?- 
+  Test 'stepBrotherOf(jed,jane). true': Success
+---------------------------------------------------------------
+Running test 'stepBrotherOf(jed,X).'...
+  setof(X,stepBrotherOf(jed,X),L).
+  L = [jane]
+  
+  yes
+  | ?-
+  Test 'stepBrotherOf(jed,X).': Success
+---------------------------------------------------------------
+Running test 'stepBrotherOf(jed,X). strict'...
+  bagof(X,stepBrotherOf(jed,X),L).
+  L = [jane]
+  
+  yes
+  | ?-
+  Test 'stepBrotherOf(jed,X). strict': Success
+---------------------------------------------------------------
+Running test 'stepBrotherOf(X,jane).'...
+  setof(X,stepBrotherOf(X,jane),L).
+  L = [jed]
+  
+  yes
+  | ?-
+  Test 'stepBrotherOf(X,jane).': Success
+---------------------------------------------------------------
+Running test 'stepBrotherOf(X,jane). strict'...
+  bagof(X,stepBrotherOf(X,jane),L).
+  L = [jed]
+  
+  (1 ms) yes
+  | ?-
+  Test 'stepBrotherOf(X,jane). strict': Success
+---------------------------------------------------------------
+Running test 'stepBrotherOf(X,Y).'...
+  setof([X,Y],stepBrotherOf(X,Y),L).
+  L = [[jed,jane]]
+  
+  yes
+  | ?-
+  Test 'stepBrotherOf(X,Y).': Success
+---------------------------------------------------------------
+Running test 'stepBrotherOf(X,Y). strict'...
+  bagof([X,Y],stepBrotherOf(X,Y),L).
+  L = [[jed,jane]]
+  
+  yes
+  | ?-
+  Test 'stepBrotherOf(X,Y). strict': Success
+---------------------------------------------------------------
+Running test 'cousin(george,jill). different families'...
+  no
+  | ?-
+  Test 'cousin(george,jill). different families': Success
+---------------------------------------------------------------
+Running test 'cousin(george,X).'...
+  setof(X,cousin(george,X),L).
+  no
+  | ?-
+  Test 'cousin(george,X).': Success
+---------------------------------------------------------------
+Running test 'cousin(X,jed).'...
+  setof(X,cousin(X,jed),L).
+  (1 ms) no
+  | ?-
+  Test 'cousin(X,jed).': Success
+---------------------------------------------------------------
+Running test 'cousin(X,Y).'...
+  setof([X,Y],cousin(X,Y),L).
+  no
+  | ?-
+  Test 'cousin(X,Y).': Success
+---------------------------------------------------------------
+Running test 'ancestorOf(joe,mavis). true'...
+  true ?
+  a
+  
+  no
+  | ?- 
+  Test 'ancestorOf(joe,mavis). true': Success
+---------------------------------------------------------------
+Running test 'ancestorOf(joe,X).'...
+  setof(X,ancestorOf(joe,X),L).
+  L = [george,jack,jane,mavis]
+  
+  yes
+  | ?-
+  Test 'ancestorOf(joe,X).': Success
+---------------------------------------------------------------
+Running test 'ancestorOf(X,mavis).'...
+  setof(X,ancestorOf(X,mavis),L).
+  L = [freida,george,harry,jan,jane,jason,jill,joe,mary,sam,terry,tim]
+  
+  yes
+  | ?-
+  Test 'ancestorOf(X,mavis).': Success
+---------------------------------------------------------------
+Running test 'ancestorOf(X,joe,1). false'...
+  no
+  | ?-
+  Test 'ancestorOf(X,joe,1). false': Success
+---------------------------------------------------------------
+Running test 'ancestorOf(X,jane,0). duplicates OK'...
+  setof(X,ancestorOf(X,jane,0),L).
+  L = [jane]
+  
+  yes
+  | ?-
+  Test 'ancestorOf(X,jane,0). duplicates OK': Success
+---------------------------------------------------------------
+Running test 'ancestorOf(X,jane,0). duplicates not accepted'...
+  bagof(X,ancestorOf(X,jane,0),L).
+  L = [jane]
+  
+  yes
+  | ?-
+  Test 'ancestorOf(X,jane,0). duplicates not accepted': Success
+---------------------------------------------------------------
+Running test 'ancestorOf(X,mavis,1). duplicates OK'...
+  setof(X,ancestorOf(X,mavis,1),L).
+  L = [george,jill]
+  
+  yes
+  | ?-
+  Test 'ancestorOf(X,mavis,1). duplicates OK': Success
+---------------------------------------------------------------
+Running test 'ancestorOf(X,mavis,1). duplicates not accepted'...
+  bagof(X,ancestorOf(X,mavis,1),L).
+  L = [jill,george]
+  
+  (1 ms) yes
+  | ?-
+  Test 'ancestorOf(X,mavis,1). duplicates not accepted': Success
+---------------------------------------------------------------
+Running test 'ancestorOf(X,mavis,2). duplicates OK'...
+  setof(X,ancestorOf(X,mavis,2),L).
+  L = [jane,jason,sam,terry]
+  
+  yes
+  | ?-
+  Test 'ancestorOf(X,mavis,2). duplicates OK': Success
+---------------------------------------------------------------
+Running test 'ancestorOf(X,mavis,2). duplicates not accepted'...
+  bagof(X,ancestorOf(X,mavis,2),L).
+  L = [jane,sam,jason,terry]
+  
+  yes
+  | ?-
+  Test 'ancestorOf(X,mavis,2). duplicates not accepted': Success
+---------------------------------------------------------------
+Running test 'ancestorOf(X,mavis,3). duplicates OK'...
+  setof(X,ancestorOf(X,mavis,3),L).
+  L = [freida,harry,jan,joe,mary,tim]
+  
+  yes
+  | ?-
+  Test 'ancestorOf(X,mavis,3). duplicates OK': Success
+---------------------------------------------------------------
+Running test 'ancestorOf(X,mavis,3). duplicates not accepted'...
+  bagof(X,ancestorOf(X,mavis,3),L).
+  L = [joe,mary,tim,freida,jan,harry]
+  
+  yes
+  | ?-
+  Test 'ancestorOf(X,mavis,3). duplicates not accepted': Success
+---------------------------------------------------------------
+Running test 'ancestorOf(mavix,X,1). false'...
+  no
+  | ?-
+  Test 'ancestorOf(mavix,X,1). false': Success
+---------------------------------------------------------------
+Running test 'ancestorOf(jane,X,0). duplicates OK'...
+  setof(X,ancestorOf(jane,X,0),L).
+  L = [jane]
+  
+  yes
+  | ?-
+  Test 'ancestorOf(jane,X,0). duplicates OK': Success
+---------------------------------------------------------------
+Running test 'ancestorOf(jane,X,0). duplicates not accepted'...
+  bagof(X,ancestorOf(jane,X,0),L).
+  L = [jane]
+  
+  yes
+  | ?-
+  Test 'ancestorOf(jane,X,0). duplicates not accepted': Success
+---------------------------------------------------------------
+Running test 'ancestorOf(mary,X,1). duplicates OK'...
+  setof(X,ancestorOf(mary,X,1),L).
+  L = [jane,jed,sally]
+  
+  yes
+  | ?-
+  Test 'ancestorOf(mary,X,1). duplicates OK': Success
+---------------------------------------------------------------
+Running test 'ancestorOf(mary,X,1). duplicates not accepted'...
+  bagof(X,ancestorOf(mary,X,1),L).
+  L = [jed,sally,jane]
+  
+  yes
+  | ?-
+  Test 'ancestorOf(mary,X,1). duplicates not accepted': Success
+---------------------------------------------------------------
+Running test 'ancestorOf(mary,X,2). duplicates OK'...
+  setof(X,ancestorOf(mary,X,2),L).
+  L = [george,jack]
+  
+  yes
+  | ?-
+  Test 'ancestorOf(mary,X,2). duplicates OK': Success
+---------------------------------------------------------------
+Running test 'ancestorOf(mary,X,2). duplicates not accepted'...
+  bagof(X,ancestorOf(mary,X,2),L).
+  L = [george,jack]
+  
+  yes
+  | ?-
+  Test 'ancestorOf(mary,X,2). duplicates not accepted': Success
+---------------------------------------------------------------
+Running test 'ancestorOf(mary,X,3). duplicates OK'...
+  setof(X,ancestorOf(mary,X,3),L).
+  L = [mavis]
+  
+  yes
+  | ?-
+  Test 'ancestorOf(mary,X,3). duplicates OK': Success
+---------------------------------------------------------------
+Running test 'ancestorOf(mary,X,3). duplicates not accepted'...
+  bagof(X,ancestorOf(mary,X,3),L).
+  L = [mavis]
+  
+  yes
+  | ?-
+  Test 'ancestorOf(mary,X,3). duplicates not accepted': Success
+---------------------------------------------------------------
+Running test 'ancestorOf(terry,jan,X). false'...
+  no
+  | ?-
+  Test 'ancestorOf(terry,jan,X). false': Success
+---------------------------------------------------------------
+Running test 'ancestorOf(jan,jan,X). duplicates OK'...
+  setof(X,ancestorOf(jan,jan,X),L).
+  L = [0]
+  
+  yes
+  | ?-
+  Test 'ancestorOf(jan,jan,X). duplicates OK': Success
+---------------------------------------------------------------
+Running test 'ancestorOf(jan,jan,X). duplicates not accepted'...
+  bagof(X,ancestorOf(jan,jan,X),L).
+  L = [0]
+  
+  yes
+  | ?-
+  Test 'ancestorOf(jan,jan,X). duplicates not accepted': Success
+---------------------------------------------------------------
+Running test 'ancestorOf(jan,terry,X). duplicates OK'...
+  setof(X,ancestorOf(jan,terry,X),L).
+  L = [1]
+  
+  yes
+  | ?-
+  Test 'ancestorOf(jan,terry,X). duplicates OK': Success
+---------------------------------------------------------------
+Running test 'ancestorOf(jan,terry,X). duplicates not accepted'...
+  bagof(X,ancestorOf(jan,terry,X),L).
+  L = [1]
+  
+  yes
+  | ?-
+  Test 'ancestorOf(jan,terry,X). duplicates not accepted': Success
+---------------------------------------------------------------
+Running test 'ancestorOf(jan,jill,X). duplicates OK'...
+  setof(X,ancestorOf(jan,jill,X),L).
+  L = [2]
+  
+  yes
+  | ?-
+  Test 'ancestorOf(jan,jill,X). duplicates OK': Success
+---------------------------------------------------------------
+Running test 'ancestorOf(jan,jill,X). duplicates not accepted'...
+  bagof(X,ancestorOf(jan,jill,X),L).
+  L = [2]
+  
+  yes
+  | ?-
+  Test 'ancestorOf(jan,jill,X). duplicates not accepted': Success
+---------------------------------------------------------------
+Running test 'ancestorOf(jan,mavis,X). duplicates OK'...
+  setof(X,ancestorOf(jan,mavis,X),L).
+  L = [3]
+  
+  yes
+  | ?-
+  Test 'ancestorOf(jan,mavis,X). duplicates OK': Success
+---------------------------------------------------------------
+Running test 'ancestorOf(jan,mavis,X). duplicates not accepted'...
+  bagof(X,ancestorOf(jan,mavis,X),L).
+  L = [3]
+  
+  yes
+  | ?-
+  Test 'ancestorOf(jan,mavis,X). duplicates not accepted': Success
+---------------------------------------------------------------
+Running test 'related(george,jack). siblings may not be genetically related'...
+  no
+  | ?-
+  Test 'related(george,jack). siblings may not be genetically related': Success
+---------------------------------------------------------------
+Running test 'related(jane,jason). different family lines'...
+  no
+  | ?-
+  Test 'related(jane,jason). different family lines': Success
+---------------------------------------------------------------
+Running test 'related(mavis,joe). true'...
+  yes
+  | ?-
+  Test 'related(mavis,joe). true': Success
+---------------------------------------------------------------
+Running test 'related(jane,X).'...
+  setof(X,related(jane,X),L).
+  L = [george,jack,jane,joe,mary,mavis]
+  
+  yes
+  | ?-
+  Test 'related(jane,X).': Success
+---------------------------------------------------------------
+Running test 'related(jane,X). strict'...
+  bagof(X,related(jane,X),L).
+  L = [george,jack,jane,joe,mary,mavis]
+  
+  yes
+  | ?-
+  Test 'related(jane,X). strict': Success
+---------------------------------------------------------------
+Running test 'related(X,jane).'...
+  setof(X,related(X,jane),L).
+  L = [george,jack,jane,joe,mary,mavis]
+  
+  yes
+  | ?-
+  Test 'related(X,jane).': Success
+---------------------------------------------------------------
+Running test 'related(X,jane). strict'...
+  bagof(X,related(X,jane),L).
+  L = [george,jack,jane,joe,mary,mavis]
+  
+  yes
+  | ?-
+  Test 'related(X,jane). strict': Success
+here.
+---------------------------------------------------------------
+Running test 'related(X,Y).'...
+  setof([X,Y],related(X,Y),L).
+  L = [[A,A],[fred,jed],[fred,sally],[freida,jason],[freida,jill],[freida,mavis],[george,jane],[george,joe],[george,mary],[george,mavis],[george,sam],[harry,jill],[harry,mavis],[harry,terry],[jack,jane],[jack,joe],[jack,mary],[jack,sam],[jan,jill],[jan,mavis],[jan,terry],[jane,george],[jane,jack],[jane,joe],[jane,mary],[jane,mavis],[jason,freida],[jason,jill],[jason,mavis],[jason,tim],[jed,fred],[jed,mary],[jill,freida],[jill,harry],[jill,jan],[jill,jason],[jill,mavis],[jill,terry],[jill,tim],[joe,george],[joe,jack],[joe,jane],[joe,mavis],[lady,lassie],[lady,rover],[lady,snoopy],[lassie,lady],[lassie,snoopy],[lassie,tramp],[mary,george],[mary,jack],[mary,jane],[mary,jed],[mary,mavis],[mary,sally],[mavis,freida],[mavis,george],[mavis,harry],[mavis,jan],[mavis,jane],[mavis,jason],[mavis,jill],[mavis,joe],[mavis,mary],[mavis,sam],[mavis,terry],[mavis,tim],[rover,lady],[rover,snoopy],[sally,fred],[sally,mary],[sam,george],[sam,jack],[sam,mavis],[snoopy,lady],[snoopy,lassie],[snoopy,rover],[snoopy,tramp],[terry,harry],[terry,jan],[terry,jill],[terry,mavis],[tim,jason],[tim,jill],[tim,mavis],[tramp,lassie],[tramp,snoopy]]
+  
+  (1 ms) yes
+  | ?-
+  Test 'related(X,Y).': Success
+---------------------------------------------------------------
+Running test 'related(X,Y). strict'...
+  bagof([X,Y],related(X,Y),L).
+  L = [[A,A],[fred,jed],[fred,sally],[freida,jason],[freida,jill],[freida,mavis],[george,jane],[george,joe],[george,mary],[george,mavis],[george,sam],[harry,jill],[harry,mavis],[harry,terry],[jack,jane],[jack,joe],[jack,mary],[jack,sam],[jan,jill],[jan,mavis],[jan,terry],[jane,george],[jane,jack],[jane,joe],[jane,mary],[jane,mavis],[jason,freida],[jason,jill],[jason,mavis],[jason,tim],[jed,fred],[jed,mary],[jill,freida],[jill,harry],[jill,jan],[jill,jason],[jill,mavis],[jill,terry],[jill,tim],[joe,george],[joe,jack],[joe,jane],[joe,mavis],[lady,lassie],[lady,rover],[lady,snoopy],[lassie,lady],[lassie,snoopy],[lassie,tramp],[mary,george],[mary,jack],[mary,jane],[mary,jed],[mary,mavis],[mary,sally],[mavis,freida],[mavis,george],[mavis,harry],[mavis,jan],[mavis,jane],[mavis,jason],[mavis,jill],[mavis,joe],[mavis,mary],[mavis,sam],[mavis,terry],[mavis,tim],[rover,lady],[rover,snoopy],[sally,fred],[sally,mary],[sam,george],[sam,jack],[sam,mavis],[snoopy,lady],[snoopy,lassie],[snoopy,rover],[snoopy,tramp],[terry,harry],[terry,jan],[terry,jill],[terry,mavis],[tim,jason],[tim,jill],[tim,mavis],[tramp,lassie],[tramp,snoopy]]
+  
+  yes
+  | ?-
+  Test 'related(X,Y). strict': Success
+---------------------------------------------------------------
+Running test 'getSpecies(tim,dog). false'...
+  no
+  | ?-
+  Test 'getSpecies(tim,dog). false': Success
+---------------------------------------------------------------
+Running test 'getSpecies(sally,cat). false'...
+  no
+  | ?-
+  Test 'getSpecies(sally,cat). false': Success
+---------------------------------------------------------------
+Running test 'getSpecies(tim,human). true'...
+  yes
+  | ?-
+  Test 'getSpecies(tim,human). true': Success
+---------------------------------------------------------------
+Running test 'getSpecies(tim,X).'...
+  setof(X,getSpecies(tim,X),L).
+  L = [human]
+  
+  (1 ms) yes
+  | ?-
+  Test 'getSpecies(tim,X).': Success
+---------------------------------------------------------------
+Running test 'getSpecies(tim,X). strict'...
+  bagof(X,getSpecies(tim,X),L).
+  L = [human]
+  
+  yes
+  | ?-
+  Test 'getSpecies(tim,X). strict': Success
+---------------------------------------------------------------
+Running test 'getSpecies(X,human).'...
+  setof(X,getSpecies(X,human),L).
+  L = [fred,freida,george,harry,jack,jan,jane,jason,jed,jill,joe,mary,mavis,sally,sam,terry,tim]
+  
+  (3 ms) yes
+  | ?-
+  Test 'getSpecies(X,human).': Success
+---------------------------------------------------------------
+Running test 'getSpecies(X,human). strict'...
+  bagof(X,getSpecies(X,human),L).
+  L = [fred,freida,george,harry,jack,jan,jane,jason,jed,jill,joe,mary,mavis,sally,sam,terry,tim]
+  
+  (4 ms) yes
+  | ?-
+  Test 'getSpecies(X,human). strict': Success
+---------------------------------------------------------------
+Running test 'getSpecies(X,dog).'...
+  setof(X,getSpecies(X,dog),L).
+  L = [lady,lassie,rover,snoopy,tramp]
+  
+  (3 ms) yes
+  | ?-
+  Test 'getSpecies(X,dog).': Success
+---------------------------------------------------------------
+Running test 'getSpecies(X,cat).'...
+  setof(X,getSpecies(X,cat),L).
+  L = [felix]
+  
+  (3 ms) yes
+  | ?-
+  Test 'getSpecies(X,cat).': Success
+---------------------------------------------------------------
+Running test 'getSpecies(X,Y).'...
+  setof([X,Y],getSpecies(X,Y),L).
+  L = [[car1,car],[car2,car],[car3,car],[felix,cat],[fred,human],[freida,human],[george,human],[harry,human],[house1,house],[house2,house],[house3,house],[house4,house],[jack,human],[jan,human],[jane,human],[jason,human],[jed,human],[jill,human],[joe,human],[lady,dog],[lassie,dog],[mary,human],[mavis,human],[rover,dog],[sally,human],[sam,human],[snoopy,dog],[terry,human],[tim,human],[tramp,dog]]
+  
+  (3 ms) yes
+  | ?-
+  Test 'getSpecies(X,Y).': Success
+---------------------------------------------------------------
+Running test 'getSpecies(X,Y). strict'...
+  bagof([X,Y],getSpecies(X,Y),L).
+  L = [[car1,car],[car2,car],[car3,car],[felix,cat],[fred,human],[freida,human],[george,human],[harry,human],[house1,house],[house2,house],[house3,house],[house4,house],[jack,human],[jan,human],[jane,human],[jason,human],[jed,human],[jill,human],[joe,human],[lady,dog],[lassie,dog],[mary,human],[mavis,human],[rover,dog],[sally,human],[sam,human],[snoopy,dog],[terry,human],[tim,human],[tramp,dog]]
+  
+  (4 ms) yes
+  | ?-
+  Test 'getSpecies(X,Y). strict': Success
+---------------------------------------------------------------
+Running test 'pet(jan). false'...
+  no
+  | ?-
+  Test 'pet(jan). false': Success
+---------------------------------------------------------------
+Running test 'pet(lassie). false'...
+  no
+  | ?-
+  Test 'pet(lassie). false': Success
+---------------------------------------------------------------
+Running test 'pet(rover). true'...
+  yes
+  | ?-
+  Test 'pet(rover). true': Success
+---------------------------------------------------------------
+Running test 'pet(lady). true'...
+  yes
+  | ?-
+  Test 'pet(lady). true': Success
+---------------------------------------------------------------
+Running test 'pet(X).'...
+  setof(X,pet(X),L).
+  L = [felix,lady,rover,snoopy]
+  
+  (7 ms) yes
+  | ?-
+  Test 'pet(X).': Success
+---------------------------------------------------------------
+Running test 'pet(X). strict'...
+  bagof(X,pet(X),L).
+  L = [felix,lady,rover,snoopy]
+  
+  (6 ms) yes
+  | ?-
+  Test 'pet(X). strict': Success
+---------------------------------------------------------------
+Running test 'feral(mary). false'...
+  no
+  | ?-
+  Test 'feral(mary). false': Success
+---------------------------------------------------------------
+Running test 'feral(lady). false'...
+  no
+  | ?-
+  Test 'feral(lady). false': Success
+---------------------------------------------------------------
+Running test 'feral(tramp). true'...
+  yes
+  | ?-
+  Test 'feral(tramp). true': Success
+---------------------------------------------------------------
+Running test 'feral(lassie). true'...
+  (1 ms) yes
+  | ?-
+  Test 'feral(lassie). true': Success
+---------------------------------------------------------------
+Running test 'feral(X).'...
+  setof(X,feral(X),L).
+  L = [lassie,tramp]
+  
+  (7 ms) yes
+  | ?-
+  Test 'feral(X).': Success
+---------------------------------------------------------------
+Running test 'feral(X). strict'...
+  bagof(X,feral(X),L).
+  L = [lassie,tramp]
+  
+  (6 ms) yes
+  | ?-
+  Test 'feral(X). strict': Success
+
+
+=========================================================================
+Test                                               Result                                  
+------------                                       ------------                            
+hasChild(fred, jed). true                          Success                                 
+parentOf(freida,jason). true                       Success                                 
+parentOf(jason,freida). false                      Success                                 
+parentOf(freida,X).                                Success                                 
+parentOf(mary,X).                                  Success                                 
+parentOf(X,terry).                                 Success                                 
+parentOf(X,terry). strict                          Success                                 
+motherOf(jane,mavis). false                        Success                                 
+motherOf(jane,jack). true                          Success                                 
+motherOf(jane,X).                                  Success                                 
+motherOf(X,terry).                                 Success                                 
+fatherOf(joe,jed). false                           Success                                 
+fatherOf(joe,jane). true                           Success                                 
+fatherOf(sam,X).                                   Success                                 
+fatherOf(X,jack).                                  Success                                 
+grandparentOf(harry,jill). true                    Success                                 
+grandparentOf(harry,terry). false                  Success                                 
+grandparentOf(harry,jed). false                    Success                                 
+grandparentOf(harry,X).                            Success                                 
+grandparentOf(mary,X).                             Success                                 
+grandparentOf(X,mavis).                            Success                                 
+grandparentOf(X,mavis). strict                     Success                                 
+grandmotherOf(jane,mavis). true                    Success                                 
+grandmotherOf(jane,jack). false                    Success                                 
+grandmotherOf(jane,X).                             Success                                 
+grandmotherOf(X,jill).                             Success                                 
+grandfatherOf(joe,jane). false                     Success                                 
+grandfatherOf(joe,george). true                    Success                                 
+grandfatherOf(joe,X).                              Success                                 
+grandfatherOf(X,jill).                             Success                                 
+greatgrandparentOf(tim,mavis). true                Success                                 
+greatgrandparentOf(tim,jill). false                Success                                 
+greatgrandparentOf(tim,X).                         Success                                 
+greatgrandparentOf(mary,X).                        Success                                 
+greatgrandparentOf(X,mavis).                       Success                                 
+greatgrandparentOf(X,mavis). strict                Success                                 
+greatgrandmotherOf(freida,mavis). true             Success                                 
+greatgrandmotherOf(jane,mavis). false              Success                                 
+greatgrandmotherOf(jan,X).                         Success                                 
+greatgrandmotherOf(jane,X). false                  Success                                 
+greatgrandmotherOf(X,mavis).                       Success                                 
+greatgrandfatherOf(mary,mavis). false              Success                                 
+greatgrandfatherOf(joe,mavis). true                Success                                 
+greatgrandfatherOf(joe,X).                         Success                                 
+greatgrandfatherOf(X,mavis).                       Success                                 
+parent(terry). true                                Success                                 
+parent(jack). false                                Success                                 
+parent(X).                                         Success                                 
+parent(X). strict                                  Success                                 
+childless(jed). true                               Success                                 
+childless(george). false                           Success                                 
+childless(X).                                      Success                                 
+childless(X). strict                               Success                                 
+sibling(jed,terry). different families             Success                                 
+sibling(jed,jane). step siblings                   Success                                 
+sibling(jed,sally). true                           Success                                 
+sibling(jed,X).                                    Success                                 
+sibling(jed,X). strict                             Success                                 
+sibling(X,george).                                 Success                                 
+sibling(X,george). strict                          Success                                 
+sibling(X,Y).                                      Success                                 
+sibling(X,Y). strict                               Success                                 
+sisterOf(sally,jane). step sister                  Success                                 
+sisterOf(jed,sally). wrong way                     Success                                 
+sisterOf(sally,jed). true                          Success                                 
+sisterOf(sally,X).                                 Success                                 
+sisterOf(sally,X). strict                          Success                                 
+sisterOf(X,jed).                                   Success                                 
+sisterOf(X,jed). strict                            Success                                 
+sisterOf(X,Y).                                     Success                                 
+sisterOf(X,Y). strict                              Success                                 
+brotherOf(jed,jane). step brother                  Success                                 
+brotherOf(sally,jed). wrong way                    Success                                 
+brotherOf(jed,sally). true                         Success                                 
+brotherOf(jed,X).                                  Success                                 
+brotherOf(jed,X). strict                           Success                                 
+brotherOf(X,sally).                                Success                                 
+brotherOf(X,sally). strict                         Success                                 
+brotherOf(X,Y).                                    Success                                 
+brotherOf(X,Y). strict                             Success                                 
+stepSibling(jed,terry). different families         Success                                 
+stepSibling(jed,sally). siblings                   Success                                 
+stepSibling(jed,jane). true                        Success                                 
+stepSibling(jed,X).                                Success                                 
+stepSibling(jed,X). strict                         Success                                 
+stepSibling(X,jed).                                Success                                 
+stepSibling(X,jed). strict                         Success                                 
+stepSibling(X,Y).                                  Success                                 
+stepSibling(X,Y). strict                           Success                                 
+stepSisterOf(jane,terry). different families       Success                                 
+stepSisterOf(jed,jane). male                       Success                                 
+stepSisterOf(jane,sally). true                     Success                                 
+stepSisterOf(jane,X).                              Success                                 
+stepSisterOf(jane,X). strict                       Success                                 
+stepSisterOf(X,jed).                               Success                                 
+stepSisterOf(X,jed). strict                        Success                                 
+stepSisterOf(X,Y).                                 Success                                 
+stepSisterOf(X,Y). strict                          Success                                 
+stepBrotherOf(jed,terry). different families       Success                                 
+stepBrotherOf(jane,jed). female                    Success                                 
+stepBrotherOf(jed,jane). true                      Success                                 
+stepBrotherOf(jed,X).                              Success                                 
+stepBrotherOf(jed,X). strict                       Success                                 
+stepBrotherOf(X,jane).                             Success                                 
+stepBrotherOf(X,jane). strict                      Success                                 
+stepBrotherOf(X,Y).                                Success                                 
+stepBrotherOf(X,Y). strict                         Success                                 
+cousin(george,jill). different families            Success                                 
+cousin(george,X).                                  Success                                 
+cousin(X,jed).                                     Success                                 
+cousin(X,Y).                                       Success                                 
+ancestorOf(joe,mavis). true                        Success                                 
+ancestorOf(joe,X).                                 Success                                 
+ancestorOf(X,mavis).                               Success                                 
+ancestorOf(X,joe,1). false                         Success                                 
+ancestorOf(X,jane,0). duplicates OK                Success                                 
+ancestorOf(X,jane,0). duplicates not accepted      Success                                 
+ancestorOf(X,mavis,1). duplicates OK               Success                                 
+ancestorOf(X,mavis,1). duplicates not accepted     Success                                 
+ancestorOf(X,mavis,2). duplicates OK               Success                                 
+ancestorOf(X,mavis,2). duplicates not accepted     Success                                 
+ancestorOf(X,mavis,3). duplicates OK               Success                                 
+ancestorOf(X,mavis,3). duplicates not accepted     Success                                 
+ancestorOf(mavix,X,1). false                       Success                                 
+ancestorOf(jane,X,0). duplicates OK                Success                                 
+ancestorOf(jane,X,0). duplicates not accepted      Success                                 
+ancestorOf(mary,X,1). duplicates OK                Success                                 
+ancestorOf(mary,X,1). duplicates not accepted      Success                                 
+ancestorOf(mary,X,2). duplicates OK                Success                                 
+ancestorOf(mary,X,2). duplicates not accepted      Success                                 
+ancestorOf(mary,X,3). duplicates OK                Success                                 
+ancestorOf(mary,X,3). duplicates not accepted      Success                                 
+ancestorOf(terry,jan,X). false                     Success                                 
+ancestorOf(jan,jan,X). duplicates OK               Success                                 
+ancestorOf(jan,jan,X). duplicates not accepted     Success                                 
+ancestorOf(jan,terry,X). duplicates OK             Success                                 
+ancestorOf(jan,terry,X). duplicates not accepted   Success                                 
+ancestorOf(jan,jill,X). duplicates OK              Success                                 
+ancestorOf(jan,jill,X). duplicates not accepted    Success                                 
+ancestorOf(jan,mavis,X). duplicates OK             Success                                 
+ancestorOf(jan,mavis,X). duplicates not accepted   Success                                 
+related(george,jack). siblings may not be genetically related Success                                 
+related(jane,jason). different family lines        Success                                 
+related(mavis,joe). true                           Success                                 
+related(jane,X).                                   Success                                 
+related(jane,X). strict                            Success                                 
+related(X,jane).                                   Success                                 
+related(X,jane). strict                            Success                                 
+related(X,Y).                                      Success                                 
+related(X,Y). strict                               Success                                 
+getSpecies(tim,dog). false                         Success                                 
+getSpecies(sally,cat). false                       Success                                 
+getSpecies(tim,human). true                        Success                                 
+getSpecies(tim,X).                                 Success                                 
+getSpecies(tim,X). strict                          Success                                 
+getSpecies(X,human).                               Success                                 
+getSpecies(X,human). strict                        Success                                 
+getSpecies(X,dog).                                 Success                                 
+getSpecies(X,cat).                                 Success                                 
+getSpecies(X,Y).                                   Success                                 
+getSpecies(X,Y). strict                            Success                                 
+pet(jan). false                                    Success                                 
+pet(lassie). false                                 Success                                 
+pet(rover). true                                   Success                                 
+pet(lady). true                                    Success                                 
+pet(X).                                            Success                                 
+pet(X). strict                                     Success                                 
+feral(mary). false                                 Success                                 
+feral(lady). false                                 Success                                 
+feral(tramp). true                                 Success                                 
+feral(lassie). true                                Success                                 
+feral(X).                                          Success                                 
+feral(X). strict                                   Success                                 
+
+Summary:
+173 Success                                 
+---
+173     Total Tests (version 4)                 
+ 43/43  Strict Tests Passed                     
+130/130 Non-Strict Tests Passed                 
